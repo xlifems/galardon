@@ -1,0 +1,30 @@
+<p>
+  grado component works!
+</p>
+<div *ngIf="!row">
+	Cargando listado de productos...
+</div>
+<div *ngIf="row">
+  listado cargado
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of row">
+      {{user.descripcionGrado}} {{user.nombreGrado}} 
+    </li>     
+    </ul>
+</div>
+<div>
+  <form #formGrado="ngForm" (ngSubmit)="saveGrado()">   
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombre Grado</label>
+      <input type="text" class="form-control" id="nombreGrado" name="nombreGrado" #nombreGrado="ngModel" [(ngModel)]="grado.nombreGrado">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Descripción Grado</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="descripcionGrado" #descripcionGrado="ngModel" [(ngModel)]="grado.descripcionGrado" >
+    </div>    
+    <button type="submit" class="btn btn-primary">Submit</button> 
+  </form>
+</div>
+<button>Save grado</button> 
+

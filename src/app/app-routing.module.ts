@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Componentes
 import { InicioComponent } from './inicio/inicio.component';
+import { GradoComponent } from './grado/grado.component';
 
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
-  { path: 'inicio', component: InicioComponent },
+  {path: 'inicio', component: InicioComponent },
+  {path: 'grado', component: GradoComponent },
   {path: '**', component: InicioComponent}
 ];
 
